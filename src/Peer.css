@@ -1,0 +1,11 @@
+.Peer {
+  width: 50%;
+}
+
+.Peer-name {
+  font-size: large;
+}
+
+.Peer-hand {
+  display: flex;
+}

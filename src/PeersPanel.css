@@ -1,0 +1,7 @@
+.PeersPanel {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import StartWindow from './StartWindow';
+import GameWindow from './GameWindow'
 
 function App() {
+  // if game in progress, show game screen
+  // if not, show start window
+  const [ inPlay, toggleInPlay ] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={'App-container'}>
+      { inPlay ? <GameWindow toggleInPlay={toggleInPlay} players={4} /> : <StartWindow toggleInPlay={toggleInPlay} />}
+      {/* <button onClick={() => toggleInPlay(!inPlay)}>Toggle Me</button> */}
     </div>
   );
 }
